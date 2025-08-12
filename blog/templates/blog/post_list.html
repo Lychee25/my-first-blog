@@ -1,16 +1,11 @@
-<html>
-    <head>
-        <title>Home page</title>
-    </head>
-    
-    <body>
-        <h1>Blog</h1>
-        {% for x in posts %}
-        <section>
-        <h2>{{x.title}}</h2>
-        <p>{{x.text}}
-        </section>
-        {%endfor%}
-    </body>
+{% extends 'blog/base.html' %}
 
-</html>
+{%block content%}
+    {% for x in posts %}
+        <section>
+            <time>Published: {{x.published_date}} </time>
+            <h2><a href="{% url 'post_detail' pk=x.pk %}">{{x.title}}</a></h2>
+            <p>{{x.text}}
+        </section>
+    {%endfor%}
+{%endblock%}

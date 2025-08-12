@@ -1,0 +1,12 @@
+section, header{
+    padding: 10px;
+}
+
+header{
+    background-color: aquamarine;
+}
+
+time{
+    margin-bottom: 3px;
+    border-bottom: 1px solid rgb(153, 151, 151);
+}
